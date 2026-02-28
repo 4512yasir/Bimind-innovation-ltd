@@ -53,10 +53,10 @@ const services = [
 ];
 
 const stats = [
-  { label: "Transactions Processed", value: "1M+" },
-  { label: "Systems Built", value: "50+" },
-  { label: "Uptime Reliability", value: "99.9%" },
-  { label: "Client Satisfaction", value: "100%" },
+  { num: 99, suffix: "%", label: "API Uptime Target" },
+  { num: 256, suffix: "-bit", label: "Encryption Standard" },
+  { num: 24, suffix: "/7", label: "System Monitoring" },
+  { num: 100, suffix: "%", label: "In-House Built" },
 ];
 
 export default function Services() {
@@ -97,8 +97,10 @@ export default function Services() {
             className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center backdrop-blur-xl"
           >
             <div className="text-3xl font-extrabold bg-gradient-to-r from-[#1A7FC7] to-[#00AFC4] bg-clip-text text-transparent">
-              {stat.value}
+              {stat.num}
+              {stat.suffix}
             </div>
+
             <div className="text-gray-400 text-sm mt-1">{stat.label}</div>
           </motion.div>
         ))}

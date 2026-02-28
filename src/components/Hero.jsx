@@ -21,10 +21,10 @@ const servicesPreview = [
 ];
 
 const stats = [
-  { label: "Transactions", value: 1000000, suffix: "+" },
-  { label: "Systems Built", value: 50, suffix: "+" },
-  { label: "Uptime", value: 99.9, suffix: "%" },
-  { label: "Support", value: 24, suffix: "/7" },
+  { num: 99, suffix: "%", label: "API Uptime Target" },
+  { num: 256, suffix: "-bit", label: "Encryption Standard" },
+  { num: 24, suffix: "/7", label: "System Monitoring" },
+  { num: 100, suffix: "%", label: "In-House Built" },
 ];
 
 const logos = [
@@ -150,7 +150,7 @@ export default function Home() {
             >
               <div className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-[#1A7FC7] to-[#00AFC4] bg-clip-text text-transparent">
                 <CountUp
-                  end={stat.value}
+                  end={stat.num}
                   duration={2.5}
                   separator=","
                   decimals={stat.value % 1 !== 0 ? 1 : 0}

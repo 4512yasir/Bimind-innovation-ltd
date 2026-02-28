@@ -31,7 +31,7 @@ export default function Contact() {
         "ZJjRslXTVoTyrS7vX"
       );
 
-      toast.success("✅ Message sent successfully!", {
+      toast.success("Message sent successfully!", {
         theme: "dark",
       });
 
@@ -43,7 +43,7 @@ export default function Contact() {
     } catch (error) {
       console.error("EMAIL ERROR:", error);
 
-      toast.error("❌ Something went wrong. Try again.", {
+      toast.error("Something went wrong. Try again.", {
         theme: "dark",
       });
     } finally {
