@@ -5,7 +5,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(override=False)
 
 app = Flask(__name__)
 
