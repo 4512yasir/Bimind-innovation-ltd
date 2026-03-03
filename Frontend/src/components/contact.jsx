@@ -10,7 +10,8 @@ export default function Contact() {
     message: "",
   });
 
-  const API_BASE_URL = "https://bimind-innovation-ltd-production.up.railway.app";
+  // ✅ Update this to your Render backend URL
+  const API_BASE_URL = "https://bimind-innovation-ltd.onrender.com";
 
   const handleChange = (e) => {
     setFormData((prev) => ({
@@ -34,18 +35,13 @@ export default function Contact() {
 
       if (data.ok) {
         toast.success("Message sent successfully!", { theme: "dark" });
-
-        setFormData({
-          user_name: "",
-          user_email: "",
-          message: "",
-        });
+        setFormData({ user_name: "", user_email: "", message: "" });
       } else {
         toast.error(data.error || "Something went wrong.", { theme: "dark" });
       }
     } catch (error) {
       console.error("API ERROR:", error);
-      toast.error("Something went wrong. Try again.", { theme: "dark" });
+      toast.error("Could not reach server. Try again later.", { theme: "dark" });
     } finally {
       setIsLoading(false);
     }
@@ -69,9 +65,7 @@ export default function Contact() {
           {/* Contact Info */}
           <div className="space-y-6">
             <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 hover:border-cyan-400/40 transition">
-              <h3 className="text-xl font-semibold mb-6 text-cyan-400">
-                Contact Details
-              </h3>
+              <h3 className="text-xl font-semibold mb-6 text-cyan-400">Contact Details</h3>
               <div className="space-y-5 text-gray-300">
                 <div>
                   <p className="font-medium text-white">📧 Email</p>
