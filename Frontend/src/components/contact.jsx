@@ -11,7 +11,7 @@ export default function Contact() {
   });
 
   // ✅ Update this to your Render backend URL
-  const API_BASE_URL = "https://bimind-innovation-ltd.onrender.com";
+ const API_BASE_URL = import.meta.env.VITE_API_URL;
 
   const handleChange = (e) => {
     setFormData((prev) => ({
